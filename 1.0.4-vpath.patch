@@ -1,0 +1,11 @@
+--- origsrc/eekboard-1.0.4/eekboard/Makefile.am	2011-08-23 02:22:48.000000000 -0500
++++ src/eekboard-1.0.4/eekboard/Makefile.am	2011-10-02 14:12:32.874682300 -0500
+@@ -83,7 +83,7 @@ eekboard-marshalers.c: eekboard-marshale
+ -include $(INTROSPECTION_MAKEFILE)
+ INTROSPECTION_GIRS =
+ INTROSPECTION_SCANNER_ARGS = --add-include-path=$(builddir) --add-include-path=$(top_builddir)/eek
+-INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir) --includedir=$(top_srcdir)/eek
++INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir) --includedir=$(top_builddir)/eek
+ 
+ if HAVE_INTROSPECTION
+ Eekboard@EEK_LIBRARY_SUFFIX@.gir: libeekboard.la

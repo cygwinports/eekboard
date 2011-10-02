@@ -1,0 +1,6 @@
+category: Gnome
+requires: python python-dbus python-gobject
+external-source: eekboard
+sdesc: "GNOME virtual keyboard (Python interface)"
+ldesc: "eekboard is a virtual keyboard software package, including a set 
+of tools to implement desktop virtual keyboards."

@@ -1,0 +1,5 @@
+category: Gnome
+requires: libatspi0 libeek0 libglib2.0_0 libgtk3_0 libibus1.0_0 libintl8 libX11_6 libxklavier16 libXtst6 python python-gi girepository-Eek0.90 girepository-GLib2.0 girepository-Gtk3.0
+sdesc: "GNOME virtual keyboard"
+ldesc: "eekboard is a virtual keyboard software package, including a set 
+of tools to implement desktop virtual keyboards."

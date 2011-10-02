@@ -1,0 +1,52 @@
+--- origsrc/eekboard-1.0.4/eek/Makefile.am	2011-08-29 01:11:35.000000000 -0500
++++ src/eekboard-1.0.4/eek/Makefile.am	2011-10-02 12:41:04.440267500 -0500
+@@ -101,6 +101,7 @@ libeek_la_SOURCES =				\
+ 
+ libeek_la_CFLAGS = -DEEK_COMPILATION=1 $(GIO2_CFLAGS) $(PANGOCAIRO_CFLAGS) $(LIBCROCO_CFLAGS)
+ libeek_la_LIBADD = $(GIO2_LIBS) $(PANGOCAIRO_LIBS) $(LIBCROCO_LIBS) -lm
++libeek_la_LDFLAGS = -no-undefined
+ 
+ if ENABLE_CLUTTER
+ libeek_clutter_public_headers =			\
+@@ -121,6 +122,7 @@ libeek_clutter_sources =			\
+ libeek_clutter_la_SOURCES = $(libeek_clutter_sources)
+ libeek_clutter_la_CFLAGS = -DEEK_COMPILATION=1 $(CLUTTER_CFLAGS)
+ libeek_clutter_la_LIBADD = libeek.la $(CLUTTER_LIBS)
++libeek_clutter_la_LDFLAGS = -no-undefined
+ endif
+ 
+ libeek_gtk_public_headers =			\
+@@ -135,6 +137,7 @@ libeek_gtk_sources =				\
+ libeek_gtk_la_SOURCES = $(libeek_gtk_sources)
+ libeek_gtk_la_CFLAGS = -DEEK_COMPILATION=1 $(GTK_CFLAGS) $(LIBCANBERRA_CFLAGS)
+ libeek_gtk_la_LIBADD = libeek.la $(GTK_LIBS) $(LIBCANBERRA_LIBS)
++libeek_gtk_la_LDFLAGS = -no-undefined
+ 
+ libeek_xkb_public_headers =			\
+ 	$(srcdir)/eek-xkb-layout.h		\
+@@ -146,6 +149,7 @@ libeek_xkb_sources =				\
+ libeek_xkb_la_SOURCES = $(libeek_xkb_sources)
+ libeek_xkb_la_CFLAGS = -DEEK_COMPILATION=1 $(XKB_CFLAGS) $(GTK_CFLAGS)
+ libeek_xkb_la_LIBADD = libeek.la $(XKB_LIBS) $(GTK_LIBS)
++libeek_xkb_la_LDFLAGS = -no-undefined
+ 
+ libeek_xkl_public_headers =			\
+ 	$(srcdir)/eek-xkl-layout.h		\
+@@ -157,6 +161,7 @@ libeek_xkl_sources =				\
+ libeek_xkl_la_SOURCES = $(libeek_xkl_sources)
+ libeek_xkl_la_CFLAGS = -DEEK_COMPILATION=1 $(LIBXKLAVIER_CFLAGS) $(GTK_CFLAGS)
+ libeek_xkl_la_LIBADD = libeek-xkb.la $(LIBXKLAVIER_LIBS) $(GTK_LIBS)
++libeek_xkl_la_LDFLAGS = -no-undefined
+ 
+ eekdir = $(includedir)/eek-$(EEK_API_VERSION)/eek
+ eek_HEADERS =					\
+--- origsrc/eekboard-1.0.4/eekboard/Makefile.am	2011-08-23 02:22:48.000000000 -0500
++++ src/eekboard-1.0.4/eekboard/Makefile.am	2011-10-02 14:12:32.874682300 -0500
+@@ -55,6 +55,7 @@ libeekboard_la_LIBADD =				\
+ 	$(top_builddir)/eek/libeek-xkl.la	\
+ 	$(GIO2_LIBS)				\
+ 	$(LIBXKLAVIER_LIBS)
++libeekboard_la_LDFLAGS = -no-undefined
+ 
+ eekboarddir = $(includedir)/eekboard-$(EEK_API_VERSION)/eekboard
+ eekboard_HEADERS = $(libeekboard_headers)

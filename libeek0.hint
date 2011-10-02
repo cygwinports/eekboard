@@ -1,0 +1,6 @@
+category: Gnome
+requires: libcairo2 libcanberra-gtk3_0 libcroco0.6_3 libglib2.0_0 libgtk3_0 libpango1.0_0 libX11_6 libxklavier16
+external-source: eekboard
+sdesc: "GNOME virtual keyboard libraries (runtime)"
+ldesc: "eekboard is a virtual keyboard software package, including a set 
+of tools to implement desktop virtual keyboards."

@@ -1,0 +1,17 @@
+inherit python gnome2
+
+DESCRIPTION="GNOME virtual keyboard"
+HOMEPAGE="https://fedorahosted.org/eekboard/"
+SRC_URI="https://github.com/downloads/ueno/${PN}/${P}.tar.gz"
+
+PATCH_URI="1.0.4-no-undefined.patch
+           1.0.4-vpath.patch"
+
+PKG_NAMES="${PN} libeek0 libeek-devel girepository-Eek0.90 python-eekboard vala-eek0.90"
+eekboard_CONTENTS="--exclude=gir-1.0 --exclude=gtk-doc --exclude=vala
+                   etc/ usr/bin/eek* usr/share/"
+libeek0_CONTENTS="usr/bin/cygeek*-0.dll"
+libeek_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+python_eekboard_CONTENTS=${PYTHON_SITELIB#/}
+vala_eek0_90_CONTENTS="usr/share/vala/"
+girepository_Eek0_90_CONTENTS="usr/*/gir*/Eek*-0.90.*"

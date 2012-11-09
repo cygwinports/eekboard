@@ -1,6 +1,0 @@
-category: Gnome
-requires: vala
-external-source: eekboard
-sdesc: "GNOME virtual keyboard libraries (Vala bindings)"
-ldesc: "eekboard is a virtual keyboard software package, including a set 
-of tools to implement desktop virtual keyboards."

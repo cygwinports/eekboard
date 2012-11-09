@@ -1,3 +1,53 @@
+--- origsrc/eekboard-1.0.8/bindings/vala/Makefile.am	2012-04-23 20:36:44.000000000 -0500
++++ src/eekboard-1.0.8/bindings/vala/Makefile.am	2012-11-09 01:51:36.014183000 -0600
+@@ -45,7 +45,7 @@ maintainer-clean-local:
+ eek_vapi_deps =						\
+ 	$(srcdir)/Eek-$(EEK_API_VERSION).metadata	\
+ 	|						\
+-	$(top_srcdir)/eek/Eek-$(EEK_API_VERSION).gir	\
++	$(top_builddir)/eek/Eek-$(EEK_API_VERSION).gir	\
+ 	$(NULL)
+ 
+ eek-$(EEK_API_VERSION).vapi: $(eek_vapi_deps)
+@@ -53,12 +53,12 @@ eek-$(EEK_API_VERSION).vapi: $(eek_vapi_
+ 		--library eek-$(EEK_API_VERSION)		\
+ 		--pkg gio-2.0					\
+ 		--metadatadir=$(srcdir)				\
+-		$(top_srcdir)/eek/Eek-$(EEK_API_VERSION).gir
++		$(top_builddir)/eek/Eek-$(EEK_API_VERSION).gir
+ 
+ eek_gtk_vapi_deps =					\
+ 	$(srcdir)/EekGtk-$(EEK_API_VERSION).metadata	\
+ 	|						\
+-	$(top_srcdir)/eek/EekGtk-$(EEK_API_VERSION).gir	\
++	$(top_builddir)/eek/EekGtk-$(EEK_API_VERSION).gir	\
+ 	$(NULL)
+ 
+ eek-gtk-$(EEK_API_VERSION).vapi: $(eek_gtk_vapi_deps)
+@@ -67,12 +67,12 @@ eek-gtk-$(EEK_API_VERSION).vapi: $(eek_g
+ 		--pkg eek-$(EEK_API_VERSION)			\
+ 		--pkg gtk+-3.0					\
+ 		--metadatadir=$(srcdir)				\
+-		$(top_srcdir)/eek/EekGtk-$(EEK_API_VERSION).gir
++		$(top_builddir)/eek/EekGtk-$(EEK_API_VERSION).gir
+ 
+ eek_xkl_vapi_deps =					\
+ 	$(srcdir)/EekXkl-$(EEK_API_VERSION).metadata	\
+ 	|						\
+-	$(top_srcdir)/eek/EekXkl-$(EEK_API_VERSION).gir	\
++	$(top_builddir)/eek/EekXkl-$(EEK_API_VERSION).gir	\
+ 	$(NULL)
+ 
+ eek-xkl-$(EEK_API_VERSION).vapi: $(eek_xkl_vapi_deps)
+@@ -80,7 +80,7 @@ eek-xkl-$(EEK_API_VERSION).vapi: $(eek_x
+ 		--library eek-xkl-$(EEK_API_VERSION)		\
+ 		--pkg eek-$(EEK_API_VERSION)			\
+ 		--metadatadir=$(srcdir)				\
+-		$(top_srcdir)/eek/EekXkl-$(EEK_API_VERSION).gir
++		$(top_builddir)/eek/EekXkl-$(EEK_API_VERSION).gir
+ 
+ # set up the verbosity rules to avoid some build noise
+ VAPIGEN_V = $(VAPIGEN_V_$(V))
 --- origsrc/eekboard-1.0.4/eekboard/Makefile.am	2011-08-23 02:22:48.000000000 -0500
 +++ src/eekboard-1.0.4/eekboard/Makefile.am	2011-10-02 14:12:32.874682300 -0500
 @@ -83,7 +83,7 @@ eekboard-marshalers.c: eekboard-marshale

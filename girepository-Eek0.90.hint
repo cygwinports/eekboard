@@ -1,6 +1,0 @@
-category: Gnome
-requires: libeek0 girepository-GLib2.0 girepository-Gtk3.0
-external-source: eekboard
-sdesc: "GNOME virtual keyboard libraries (GObject Introspection)"
-ldesc: "eekboard is a virtual keyboard software package, including a set 
-of tools to implement desktop virtual keyboards."
